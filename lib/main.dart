@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 void main() {
   runApp(const FirstUI());
@@ -12,26 +15,43 @@ class FirstUI extends StatelessWidget {
     return MaterialApp(
       //title: "This is Sazzad",
       home: Scaffold(
-        appBar: AppBar(
-         
-          backgroundColor: Colors.red,
-          foregroundColor: Colors.blue,
-          centerTitle: true,
-          elevation: 10.5,
-          title: Text("Basic Flutter UI"),
-        ),
-        body: Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(35),
-          padding: EdgeInsets.all(35),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            gradient: LinearGradient(colors: [
-
-            ])
+          appBar: AppBar(
+            title: Text("Basic Flutter UI"),
           ),
-        ),
-      ),
+          body: Column(
+            children: [
+              const Text(
+                "4.0",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 50, 46, 46), fontSize: 30),
+              ),
+              Row(
+                children: const [
+                  Icon(
+                    Icons.star,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                ],
+              )
+            ],
+          )
+          ),
     );
   }
 }
