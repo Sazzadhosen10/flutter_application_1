@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 void main() {
   runApp(const FirstUI());
@@ -47,11 +44,15 @@ class FirstUI extends StatelessWidget {
                     size: 50,
                     color: Colors.black,
                   ),
+                  Icon(
+                    Icons.star_border,
+                    size: 50,
+                    color: Color.fromARGB(255, 19, 18, 18),
+                  ),
                 ],
               )
             ],
-          )
-          ),
+          )),
     );
   }
 }
