@@ -13,7 +13,7 @@ class FirstUI extends StatelessWidget {
       //title: "This is Sazzad",
       home: Scaffold(
         appBar: AppBar(
-          title: "This is Sazzad",
+         
           backgroundColor: Colors.red,
           foregroundColor: Colors.blue,
           centerTitle: true,
