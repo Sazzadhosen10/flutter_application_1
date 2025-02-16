@@ -1,71 +1,113 @@
 import 'package:flutter/material.dart';
+//import 'package:iconsax/iconsax.dart';
 
 void main() {
-  runApp(const FirstUI());
+  runApp(const MyApp());
 }
 
-class FirstUI extends StatelessWidget {
-  const FirstUI({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Basic Flutter UI"),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: Text('Welcome to Flutter'),
+        titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 30),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(30),
+        margin: EdgeInsets.only(left: 50, right: 50, top: 100, bottom: 100),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: const Color.fromARGB(255, 242, 235, 235),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              "4.0",
-              style: TextStyle(
-                  color: Color.fromARGB(255, 50, 46, 46),
-                  fontSize: 30,
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "50% OFF",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
+              Icon(Icons.home)
+            ]),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Expanded(
-                  child: Icon(
-                    Icons.star,
-                    size: 50,
-                    color: Colors.black,
+                Container(
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    image: DecorationImage(
+                      image: AssetImage('assets/image/xyz.png'),
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                const Flexible(
-                  fit: FlexFit.loose,
-                  flex: 3,
-                  child: Icon(
-                    Icons.star,
-                    size: 50,
-                    color: Colors.black,
-                  ),
-                ),
-                const Icon(
-                  Icons.star,
-                  size: 50,
-                  color: Colors.black,
-                ),
-                const Icon(
-                  Icons.star,
-                  size: 50,
-                  color: Colors.black,
-                ),
-                const Icon(
-                  Icons.star_border,
-                  size: 50,
-                  color: Color.fromARGB(255, 19, 18, 18),
-                ),
-                const Text(
-                  "submit",
-                  style: TextStyle(fontSize: 20),
                 ),
               ],
             ),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "NIKE VERSION 4",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Text(
+                "\$ 45,000",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "\$ 55,000",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ]),
           ],
         ),
       ),
